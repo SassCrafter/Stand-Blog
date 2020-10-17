@@ -1,0 +1,114 @@
+.header {
+  width: 100%;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  // Media
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+
+  &::after {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background: $primary-color;
+    position: absolute;
+    bottom: 0.4rem;
+    right: -0.6rem;
+  }
+}
+
+.mobile-toggler {
+  font-size: 1.6rem;
+  @include set-bg($primary-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+
+  .fa-times {
+    display: none;
+  }
+
+  // Hide on desktop
+  @include media("desktop") {
+    display: none;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: $header-height;
+  left: -0.5rem;
+  z-index: 1001;
+  width: 100vw;
+  height: 0;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: height $transition-delay cubic-bezier(0.25, 0.1, 0.63, 0.9);
+
+  // Desktop Menu
+  @include media("desktop") {
+    height: $header-height;
+    justify-content: flex-end;
+    position: static;
+    width: 70%;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  // Menu list
+  &-list {
+    width: 90%;
+
+    @include media("desktop") {
+      display: flex;
+      justify-content: space-between;
+    }
+    &-item {
+      width: 100%;
+      padding: 0.5rem;
+      @include media("desktop") {
+        padding: 0;
+        width: initial;
+      }
+
+      &:not(:last-child) {
+        border-bottom: 2px dotted darken($light-color, 10%);
+        @include media("desktop") {
+          border: none;
+        }
+      }
+    }
+
+    &-link {
+      text-transform: uppercase;
+      font-weight: 600;
+      @include media("desktop") {
+        font-size: 0.9rem;
+        font-weight: 900;
+      }
+    }
+  }
+}
+.open + .nav {
+  height: 14rem;
+}

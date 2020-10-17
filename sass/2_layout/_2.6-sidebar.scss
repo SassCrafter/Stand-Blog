@@ -1,0 +1,86 @@
+.sidebar {
+  // Search bar
+  &-form {
+    width: 100%;
+    height: auto;
+
+    &-group {
+      margin: 1rem 0;
+      &-search {
+        width: 100%;
+        padding: 1rem 0.5rem;
+        //font-size: 1rem;
+        border: 1px solid lighten($darker-color, 20%);
+      }
+    }
+  }
+
+  // Sidebar general list
+  &-list {
+    h5,
+    &-link {
+      font-size: 1rem;
+      font-weight: 900;
+      @include link-transition;
+    }
+    &-link:hover {
+      color: $primary-color;
+    }
+  }
+
+  .date {
+    color: $darker-color;
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+
+  // Categories
+  .categories {
+    &-list {
+      li {
+        margin: 0.5rem 0;
+
+        a {
+          display: inline-block;
+          padding: 0.5rem;
+          text-transform: capitalize;
+          position: relative;
+
+          &::before {
+            content: "-";
+          }
+        }
+      }
+    }
+  }
+
+  // Tags
+  .tags {
+    &-list {
+      display: flex;
+      //justify-content: space-between;
+      flex-wrap: wrap;
+
+      &-item {
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+          margin-top: 1rem;
+        }
+        &:last-child {
+          margin-top: 1rem;
+        }
+      }
+
+      &-link {
+        display: inline-block;
+        padding: 0.5rem;
+        border: 1px solid lighten($darker-color, 20%);
+        transition: background-color 250ms ease, color 250ms linear;
+
+        &:hover {
+          @include set-bg($primary-color);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+$primary-color: #f48840;
+$light-color: #f7f7f7;
+$darker-color: darken(#eee, 20%);
+$medium-color: #7a7a7a;
+$dark-color: #20232e;
+$link-color: #3f7bff;
+
+$font-stack: "Roboto", Arial, Helvetica, sans-serif;
+
+$max-width: 1200px;
+$header-height: 5rem;
+
+$t-transition: transform 250ms ease-in-out;
+$transition-delay: 500ms;
+
+// Device sizes breakpoints
+$tablet: 768px;
+$desktop: 992px;
+$x-large: 1200px;
