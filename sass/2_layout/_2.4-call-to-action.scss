@@ -1,0 +1,24 @@
+.call-to-action {
+  text-align: center;
+  .row {
+    flex-direction: column;
+
+    .column {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @include media("desktop") {
+    .row {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .column {
+        &:last-child {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
