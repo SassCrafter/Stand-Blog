@@ -1,0 +1,28 @@
+.comment {
+  padding: 2rem 0;
+
+  &:first-child {
+    background: red;
+  }
+
+  &-content {
+    display: flex;
+  }
+
+  &-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 2rem;
+  }
+
+  @include media("desktop") {
+    &:nth-child(odd) {
+      .comment-content {
+        justify-content: flex-end;
+        .column {
+          width: calc(100% - 264px);
+        }
+      }
+    }
+  }
+}

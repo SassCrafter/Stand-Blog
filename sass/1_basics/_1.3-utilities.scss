@@ -104,11 +104,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
 
-.column {
-  width: 45%;
-  max-width: 45%;
+  .column {
+    width: 45%;
+    max-width: 45%;
+  }
 }
 
 // Link hover effect
